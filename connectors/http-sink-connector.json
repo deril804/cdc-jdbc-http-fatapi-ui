@@ -1,0 +1,14 @@
+{
+    "name": "http-sink-connector",
+    "config": {
+      "connector.class": "io.aiven.kafka.connect.http.HttpSinkConnector",
+      "topics": "jdbcproducts",
+      "http.authorization.type": "none",
+      "http.url": "http://myapp:80/items",
+      "batching.enabled": true,
+      "batch.max.size": 1,
+      "tasks.max": "10",
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+    }
+  }
